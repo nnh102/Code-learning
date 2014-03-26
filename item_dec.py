@@ -5,7 +5,8 @@ print "start"
 n =1
 for x in range(18, 31):
 	print "process", "blood.present_receive.log.201312%01d" % x
-	f = open("blood.present_receive.log.201312%01d" % x)
+	filename = "blood.present_receive.log.201312%01d" % x
+	f = open(filename)
 	item_dec = {}
 	for line in f:
 		#n += 1
@@ -20,5 +21,6 @@ for x in range(18, 31):
 					item_dec[a[6][m]] = int(a[7][m])
 				else:
 					item_dec[a[6][m]] += int(a[7][m])
-	print item_dec
+	for p in item_dec:
+		print p, ":", item_dec[p]
 
